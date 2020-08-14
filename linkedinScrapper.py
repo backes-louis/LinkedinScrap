@@ -35,9 +35,11 @@ def login(driver):
     driver.get("https://lu.linkedin.com") 
     time.sleep(2)
     #Actual Login keys 
-    driver.find_element_by_id("session_key").send_keys("Louis.backes@gmail.com")
+    e_mail = input("Enter email adress: ")
+    session_password = input("Enter Password: ")
+    driver.find_element_by_id("session_key").send_keys(e_mail)
     time.sleep(3)
-    driver.find_element_by_id("session_password").send_keys("Aqwzsxedc123")
+    driver.find_element_by_id("session_password").send_keys(session_password)
     print("-----> Logging in private account...")
     time.sleep(2.5)
     driver.find_element_by_class_name("sign-in-form__submit-button").click()
