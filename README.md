@@ -1,5 +1,5 @@
 # LinkedinScrap
-Requirements Librairies:
-  pip install xldr
+## Requirements Librairies:
+  pip install xlrd
               selenium
               CSV extension Vscode
