@@ -1,51 +1,24 @@
-# list_of_names = ["Bob Kneip",
-#                  "Anne Backes",
-#                  "Boris Floka",
-#                  "Satya Nadella",
-#                  "Laurent Remmy", 
-#                  "Marc Leblanc",
-#                  "Nicolas Guelfi",
-#                  "Vincent Backes",
-#                  "Anna Muller", 
-#                  "Claire-Lise Backes",
-#                  "Paulo Apolinario", 
-#                  "Dany Ferreira",
-#                  "David Lopes Ferreira",
-#                  "Sam Abdi", 
-#                  "Ze Wang", 
-#                  "kavita Rege",
-#                  "Claude Schlesser",
-#                  "Sam Afshari", 
-#                  "David Morillo",
-#                  "Julien Schleich",
-#                  "Rohita Joshi",
-#                  "Susan Wojcicki",
-#                  "Dara Khosrowshahi",
-#                  "Kevin Systrom",
-#                  "Mike Krieger",
-#                  "Adam Mosseri",
-#                  "Vijay Shankar",
-#                  "Bill Gates",
-#                  "Arno Nienhuis",
-#                  "Julien D.",
-#                  "Stephan Winkelmann",
-#                  "Annabelle Ortiz",
-#                  "isabella francis",
-#                  "Emmanuel Macron",
-#                  "Edouard Philippe",
-#                  "Kylian Mbappé",
-#                  "Didier Drogba",
-#                  "Martin Bouygues",
-#                  "François FILLON",
-#                  "Jean-Michel Aulas"
+import xlrd
+import sys
 
 
-                 
-                 
-#                     ]
-list_of_names = ["Vincent Backes"]
+list_of_names = []
 
-                 
+location = (r"C:\Users\Louis.backes\Desktop\selenium\file_names.xlsx")
+name = []
+wb = xlrd.open_workbook(location)
+sheet = wb.sheet_by_index(0)
+sheet.cell_value(0,0)
+
+for i in range(sheet.nrows):
+
+    if sheet.row == xlrd.XL_CELL_EMPTY:
+        sys.exit()  
+    else:
+        list_of_names.append(sheet.cell_value(i,0))
+
+
+                   
                  
                  
                  

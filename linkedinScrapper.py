@@ -5,6 +5,7 @@ import time
 import json
 import csv
 import datetime
+from password import protected_key
 
 # Opening of documents to collect the data
 begin_time = datetime.datetime.now()
@@ -35,11 +36,9 @@ def login(driver):
     driver.get("https://lu.linkedin.com") 
     time.sleep(2)
     #Actual Login keys 
-    e_mail = input("Enter email adress: ")
-    session_password = input("Enter Password: ")
-    driver.find_element_by_id("session_key").send_keys(e_mail)
+    driver.find_element_by_id("session_key").send_keys(protected_key[0])
     time.sleep(3)
-    driver.find_element_by_id("session_password").send_keys(session_password)
+    driver.find_element_by_id("session_password").send_keys(protected_key[1])
     print("-----> Logging in private account...")
     time.sleep(2.5)
     driver.find_element_by_class_name("sign-in-form__submit-button").click()
@@ -53,7 +52,7 @@ def search(driver):
     print("-----> On Google...")
     driver.find_element_by_name("q").send_keys(list_of_names[i] + " Linkedin")
     print("-----> Retrieved the name " + list_of_names[i] + "...")
-    
+   
     time.sleep(3)
     driver.find_element_by_name("q").send_keys(Keys.RETURN)
     time.sleep(2.5)
@@ -129,8 +128,6 @@ for names in list_of_names:
     
     time.sleep(2.5) 
     i += 1
-
-endDriver()
 
 
 
