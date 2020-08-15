@@ -17,13 +17,4 @@ for i in range(sheet.nrows):
     else:
         list_of_names.append(sheet.cell_value(i,0))
 
-try:
-    pass
-except expression as identifier:
-    pass
-else:
-    pass
-                   
-                 
-                 
-                 
+        
