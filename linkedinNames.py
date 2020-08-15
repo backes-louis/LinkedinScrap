@@ -4,7 +4,7 @@ import sys
 
 list_of_names = []
 
-location = (r"C:\Users\Louis.backes\Desktop\selenium\file_names.xlsx")
+location = (r"C:\Users\LouLou\Desktop\selenium\file_names.xlsx")
 name = []
 wb = xlrd.open_workbook(location)
 sheet = wb.sheet_by_index(0)
