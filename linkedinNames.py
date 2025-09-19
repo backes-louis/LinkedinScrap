@@ -4,7 +4,7 @@ import sys
 
 list_of_names = []
 
-location = (r"C:\Users\LouLou\Desktop\selenium\file_names.xlsx")
+location = \\path
 name = []
 wb = xlrd.open_workbook(location)
 sheet = wb.sheet_by_index(0)
@@ -16,5 +16,6 @@ for i in range(sheet.nrows):
         sys.exit()  
     else:
         list_of_names.append(sheet.cell_value(i,0))
+
 
         
